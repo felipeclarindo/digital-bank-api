@@ -8,6 +8,7 @@ API Rest para um banco digital desenvolvida em `Java` usando `Spring`.
 
 - `Java` - Desenvolvimento da API.
 - `Spring` - Configurações automaticas.
+- `Maven` - Automação de builds para gerenciar dependências.
 
 ## Passos para instalação e execução
 
