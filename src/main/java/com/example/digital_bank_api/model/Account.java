@@ -2,7 +2,6 @@ package com.example.digital_bank_api.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import jakarta.annotation.Generated;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
@@ -36,8 +35,7 @@ public class Account {
     private AccountState accountState;
     private AccountType accountType;
 
-    public Account(Long id, String holderName, String holderCpf, BigDecimal startedBalance, int number, String agency, Date openingDate, AccountState accountState, AccountType accountType) {
-        this.id = id;
+    public Account(String holderName, String holderCpf, BigDecimal startedBalance, int number, String agency, LocalDate openingDate, AccountState accountState, AccountType accountType) {
         this.holderName = holderName;
         this.holderCpf = holderCpf;
         this.startedBalance = startedBalance;
@@ -47,9 +45,14 @@ public class Account {
         this.accountState = accountState;
         this.accountType = accountType;
     }
+    
 
     public Long getId() {
         return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
     
     public String getHolderName() {
@@ -82,5 +85,18 @@ public class Account {
 
     public AccountType getAccountType() {
         return this.accountType;
+    }
+
+    @Override
+    public String toString() {
+        return "Account Details\n"  
+            + "Holder Name -> " + holderName 
+            +  "\nHolder Cpf -> " + holderCpf
+            + "\nStarted Balance -> " + startedBalance
+            + "\nNumber -> " + number
+            + "\nAgency -> " + agency
+            + "\nOpening Date ->" + openingDate
+            + "\nAccount State ->" + accountState
+            + "\nAccount Type -> " + accountType;
     }
 }
