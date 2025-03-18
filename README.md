@@ -8,6 +8,7 @@ REST Api for a digital bank developed in `Java` using `Spring`.
 
 - `Java` - API Development.
 - `Spring` - Auto configurate.
+- `Maven` - Automation of builds to manage dependencies.
 
 ## Steps to install and run
 
