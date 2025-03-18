@@ -1,42 +1,41 @@
 package com.example.digital_bank_api.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Random;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PastOrPresent;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.PositiveOrZero;
 
 public class Account {
 
     private Long id;
 
-    @NotBlank(message = "The field holderName cant is empty.")
     private String holderName;
 
-    @NotBlank(message = "The field holderCpf cant is empty.")
     private String holderCpf;
 
-    @NotNull(message = "The started balance is need.")
-    @PositiveOrZero(message = "The started balance needs to be positive.")
     private BigDecimal startedBalance;
 
-    @Positive(message = "The number needs to be positive.")
     private int number;
 
-    @NotBlank(message = "The field agency cant is empty.")
     private String agency;
 
-    @NotNull(message = "The opening date is needed.")
-    @PastOrPresent(message = "The opening date can not be in future.")
     private LocalDate openingDate;
 
     private AccountState accountState;
+
     private AccountType accountType;
 
-    public Account(String holderName, String holderCpf, BigDecimal startedBalance, int number, String agency, LocalDate openingDate, AccountState accountState, AccountType accountType) {
-        this.holderName = holderName;
+    public Account(
+        String holderName,
+        String holderCpf,
+        BigDecimal startedBalance,
+        int number,
+        String agency,
+        LocalDate openingDate,
+        AccountState accountState,
+        AccountType accountType
+    ) {
+        this.id = Math.abs(new Random().nextLong());
+        this.holderName = holderName;   
         this.holderCpf = holderCpf;
         this.startedBalance = startedBalance;
         this.number = number;
@@ -46,45 +45,85 @@ public class Account {
         this.accountType = accountType;
     }
     
-
     public Long getId() {
         return this.id;
     }
 
-    public void setId(Long id) {
+    public Account setId(Long id) {
         this.id = id;
+        return this;
     }
     
     public String getHolderName() {
         return this.holderName;
     }
 
+    public Account setHolderName(String holderName) {
+        this.holderName = holderName;
+        return this;
+    }
+
     public String getHolderCpf() {
         return this.holderCpf;
+    }
+
+    public Account setHolderCpf(String holderCpf) {
+        this.holderCpf = holderCpf;
+        return this;
     }
 
     public BigDecimal getStartedBalance() {
         return this.startedBalance;
     }
 
+    public Account setStartedBalance(BigDecimal startedBalance) {
+        this.startedBalance = startedBalance;
+        return this;
+    }
+
     public int getNumber() {
         return this.number;
+    }
+
+    public Account setNumber(int number) {
+        this.number = number;
+        return this;
     }
 
     public String getAgency() {
         return this.agency;
     }
 
+    public Account setAgency(String agency) {
+        this.agency = agency;
+        return this;
+    }
+
     public LocalDate getOpeningDate() {
         return this.openingDate;
+    }
+
+    public Account setOpeningDate(LocalDate openingDate) {
+        this.openingDate = openingDate;
+        return this;
     }
 
     public AccountState getAccountState() {
         return this.accountState;
     }
+    
+    public Account setAccountState(AccountState accountState) {
+        this.accountState = accountState;
+        return this;
+    }
 
     public AccountType getAccountType() {
         return this.accountType;
+    }
+
+    public Account setAccountType(AccountType accountType) {
+        this.accountType = accountType;
+        return this;
     }
 
     @Override
