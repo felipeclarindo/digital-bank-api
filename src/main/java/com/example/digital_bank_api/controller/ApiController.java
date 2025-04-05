@@ -9,16 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api")
 public class ApiController {
     @GetMapping
-    public ResponseEntity<String> index() {
-        String response = "Digital Bank Api - "
-        + "Integrante: Felipe Gabriel Lopes Pinheiro Clarindo\n";
-        return ResponseEntity.status(200).body(response);
-    }
-
-    @GetMapping("/api")
     public ResponseEntity<Object> getApiDescription() {
         Map<String, String> response = new HashMap<>();
         response.put("status", "Api is running.");
