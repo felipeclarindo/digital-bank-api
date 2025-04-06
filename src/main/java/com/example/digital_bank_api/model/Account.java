@@ -112,16 +112,14 @@ public class Account {
 
     @Override
     public String toString() {
-        return """
-                Account Details
-                Holder Name -> %s
-                Holder Cpf -> %s
-                Started Balance -> %s
-                Number -> %d
-                Agency -> %s
-                Opening Date -> %s
-                Account State -> %s
-                Account Type -> %s
-                """.formatted(holderName, holderCpf, balance, number, agency, openingDate, accountState, accountType);
+        return "Account Details\n"  
+            + "Holder Name -> " + holderName 
+            +  "\nHolder Cpf -> " + holderCpf
+            + "\nStarted Balance -> " + startedBalance
+            + "\nNumber -> " + number
+            + "\nAgency -> " + agency
+            + "\nOpening Date ->" + openingDate
+            + "\nAccount State ->" + accountState
+            + "\nAccount Type -> " + accountType;
     }
 }
