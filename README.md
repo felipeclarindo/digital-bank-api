@@ -2,7 +2,7 @@
 
 # Digital Bank Api
 
-REST Api for a digital bank developed in `Java` using `Spring`.
+REST Api for a digital bank developed in `Java` using `Spring` and `Maven`.
 
 ## Technologies Used
 

@@ -2,7 +2,7 @@
 
 # Digital Bank Api
 
-API Rest para um banco digital desenvolvida em `Java` usando `Spring`.
+API Rest para um banco digital desenvolvida em `Java` usando `Spring` e `Maven`.
 
 ## Tecnologias Utilizadas
 

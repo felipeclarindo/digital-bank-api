@@ -1,50 +1,34 @@
 package com.example.digital_bank_api.model;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Random;
-
 
 public class Account {
-
     private Long id;
-
     private String holderName;
-
     private String holderCpf;
-
-    private BigDecimal startedBalance;
-
+    private BigDecimal balance;
     private int number;
-
     private String agency;
-
     private LocalDate openingDate;
-
     private AccountState accountState;
-
     private AccountType accountType;
 
-    public Account(
-        String holderName,
-        String holderCpf,
-        BigDecimal startedBalance,
-        int number,
-        String agency,
-        LocalDate openingDate,
-        AccountState accountState,
-        AccountType accountType
-    ) {
-        this.id = Math.abs(new Random().nextLong());
-        this.holderName = holderName;   
+    protected LocalDate date = LocalDate.now();
+
+    public Account(Long id, String holderName, String holderCpf, BigDecimal balance, int number, String agency,
+            AccountType accountType) {
+        this.id = id;
+        this.holderName = holderName;
         this.holderCpf = holderCpf;
-        this.startedBalance = startedBalance;
+        this.balance = balance;
         this.number = number;
         this.agency = agency;
-        this.openingDate = openingDate;
-        this.accountState = accountState;
+        this.openingDate = date;
+        this.accountState = AccountState.ACTIVE;
         this.accountType = accountType;
     }
-    
+
     public Long getId() {
         return this.id;
     }
@@ -53,7 +37,7 @@ public class Account {
         this.id = id;
         return this;
     }
-    
+
     public String getHolderName() {
         return this.holderName;
     }
@@ -72,12 +56,12 @@ public class Account {
         return this;
     }
 
-    public BigDecimal getStartedBalance() {
-        return this.startedBalance;
+    public BigDecimal getBalance() {
+        return this.balance;
     }
 
-    public Account setStartedBalance(BigDecimal startedBalance) {
-        this.startedBalance = startedBalance;
+    public Account setBalance(BigDecimal balance) {
+        this.balance = balance;
         return this;
     }
 
@@ -111,7 +95,7 @@ public class Account {
     public AccountState getAccountState() {
         return this.accountState;
     }
-    
+
     public Account setAccountState(AccountState accountState) {
         this.accountState = accountState;
         return this;
